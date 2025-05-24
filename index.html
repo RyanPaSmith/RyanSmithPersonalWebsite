@@ -11,26 +11,45 @@
 
   <nav>
     <ul>
-      <li><a href="#about" onclick="showTab('about')">About</a></li>
-      <li><a href="#projects" onclick="showTab('projects')">Projects</a></li>
-      <li><a href="#contact" onclick="showTab('contact')">Contact</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <div id="content">
-    <section id="about" class="tab active glass-card">
-      <h1>Ryan Smith</h1>
-      <p>Hello! I'm Ryan Smith, a data-driven creator passionate about finance, technology, and making cool things on the web. This is my personal portfolio space—built to grow alongside me.</p>
-    </section>
+  <section id="home" class="glass-card full-height center-content">
+    <h1>Ryan Smith</h1>
+    <p>I’m currently seeking roles in Business Analytics, Data Science, or Financial Technology. Let’s build something great together.</p>
+  </section>
 
-    <section id="projects" class="tab glass-card">
-      <!-- Projects content goes here -->
-    </section>
+  <section id="about" class="glass-card">
+    <h2>About Me</h2>
+    <p>I’m a data-driven creator passionate about finance, technology, and visual storytelling. I love solving problems and bringing clarity through data, whether through dashboards, models, or elegant code.</p>
+  </section>
 
-    <section id="contact" class="tab glass-card">
-      <!-- Contact content goes here -->
-    </section>
-  </div>
+  <section id="projects" class="glass-card">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <a href="project1.html"><img src="https://via.placeholder.com/300x200?text=Project+1" alt="Project 1"></a>
+      <a href="project2.html"><img src="https://via.placeholder.com/300x200?text=Project+2" alt="Project 2"></a>
+      <a href="project3.html"><img src="https://via.placeholder.com/300x200?text=Project+3" alt="Project 3"></a>
+      <a href="project4.html"><img src="https://via.placeholder.com/300x200?text=Project+4" alt="Project 4"></a>
+      <a href="project5.html"><img src="https://via.placeholder.com/300x200?text=Project+5" alt="Project 5"></a>
+      <a href="project6.html"><img src="https://via.placeholder.com/300x200?text=Project+6" alt="Project 6"></a>
+    </div>
+  </section>
+
+  <section id="contact" class="glass-card">
+    <h2>Contact Me</h2>
+    <form id="contact-form">
+      <input type="text" name="firstName" placeholder="First Name" required />
+      <input type="text" name="lastName" placeholder="Last Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
 
   <script src="script.js"></script>
 </body>
