@@ -73,7 +73,8 @@
   </section>
 
   <script>
-    AOS.init();
+    AOS.init({ once: true, duration: 700 });
+
     ScrollReveal().reveal('.glass-card', { interval: 200 });
 
     const btn = document.getElementById('send-btn');

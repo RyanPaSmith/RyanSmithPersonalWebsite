@@ -274,3 +274,8 @@ lottie-player {
     gap: 1rem;
   }
 }
+/* Force content visibility in case of delayed animation load */
+.glass-card {
+  opacity: 1 !important;
+  transform: none !important;
+}
