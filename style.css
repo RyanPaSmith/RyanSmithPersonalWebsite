@@ -1,218 +1,30 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background: #0f0c29;
-  color: #fff;
-  scroll-behavior: smooth;
-  transition: background 0.4s ease, color 0.4s ease;
-}
-
-body.light-mode {
-  background: #ffffff;
-  color: #111;
-}
-
-body.light-mode .glass-card {
-  background: rgba(255, 255, 255, 0.9);
-  color: #111;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-.hero-bg {
+.toast {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(135deg, #000428, #004e92);
-  z-index: -2;
-  will-change: transform;
-  transition: background 0.4s ease;
-}
-
-body.light-mode .hero-bg {
-  background: linear-gradient(135deg, #dce1e3, #f3f6f9);
-}
-
-.overlay {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: -1;
-  background: transparent;
-  transition: background 0.4s ease;
-}
-
-body.light-mode .overlay {
-  background: #ffffff;
-}
-
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  padding: 1rem 0;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-
-nav ul li a {
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.85);
   color: #fff;
+  padding: 1em 1.5em;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1000;
+}
+.toast.show {
+  opacity: 1;
+}
+
+.contact-info a {
+  color: #00c6ff;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1rem;
-  position: relative;
-  transition: color 0.3s ease, transform 0.3s ease;
+}
+.contact-info a:hover {
+  text-decoration: underline;
 }
 
-body.light-mode nav ul li a {
-  color: #111;
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
-
-nav ul li a:hover {
-  transform: scale(1.05);
-}
-
-nav ul li a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #00d2ff;
-  transition: width 0.3s;
-}
-
-nav ul li a:hover::after {
-  width: 100%;
-}
-
-#theme-toggle {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-body.light-mode #theme-toggle {
-  color: #111;
-}
-
-#theme-toggle:hover {
-  transform: rotate(20deg);
-}
-
-section {
-  padding: 3rem 2rem;
-  max-width: 1000px;
-  margin: 3rem auto;
-}
-
-.full-height {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
-.glow-text {
-  font-size: 3rem;
-  color: #fff;
-  text-shadow: 0 0 8px #00e6ff, 0 0 24px #0077ff;
-  margin-bottom: 1rem;
-}
-
-body.light-mode .glow-text {
-  color: #111;
-  text-shadow: none;
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: 16px;
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.05);
-  padding: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.glass-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 40px rgba(0, 255, 255, 0.15);
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 1.5rem;
-}
-
-.projects-grid img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 12px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.projects-grid img:hover {
-  transform: rotate(-1deg) scale(1.08);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-input, textarea {
-  padding: 0.75rem;
-  border-radius: 8px;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-}
-
-body.light-mode input,
-body.light-mode textarea {
-  background: rgba(0, 0, 0, 0.05);
-  color: #111;
-}
-
-input::placeholder, textarea::placeholder {
-  color: #ccc;
-}
-
-button {
-  padding: 0.9rem;
-  background: linear-gradient(to right, #00c6ff, #0072ff);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-button:hover {
-  background: linear-gradient(to right, #0072ff, #00c6ff);
-}
-
