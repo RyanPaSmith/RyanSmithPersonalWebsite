@@ -1,36 +1,37 @@
-/* index.html */
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ryan Smith</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ryan Smith</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#about" onclick="showTab('about')">About</a></li>
-            <li><a href="#projects" onclick="showTab('projects')">Projects</a></li>
-            <li><a href="#contact" onclick="showTab('contact')">Contact</a></li>
-        </ul>
-    </nav>
+  <div class="hero-bg"></div>
 
-    <div id="content">
-        <section id="about" class="tab active">
-            <h1>Ryan Smith</h1>
-            <p>Hello! I'm Ryan Smith, a data-driven creator passionate about finance, technology, and making cool things on the web. This is my personal portfolio space—built to grow alongside me.</p>
-        </section>
+  <nav>
+    <ul>
+      <li><a href="#about" onclick="showTab('about')">About</a></li>
+      <li><a href="#projects" onclick="showTab('projects')">Projects</a></li>
+      <li><a href="#contact" onclick="showTab('contact')">Contact</a></li>
+    </ul>
+  </nav>
 
-        <section id="projects" class="tab">
-            <!-- Projects content goes here -->
-        </section>
+  <div id="content">
+    <section id="about" class="tab active glass-card">
+      <h1>Ryan Smith</h1>
+      <p>Hello! I'm Ryan Smith, a data-driven creator passionate about finance, technology, and making cool things on the web. This is my personal portfolio space—built to grow alongside me.</p>
+    </section>
 
-        <section id="contact" class="tab">
-            <!-- Contact content goes here -->
-        </section>
-    </div>
+    <section id="projects" class="tab glass-card">
+      <!-- Projects content goes here -->
+    </section>
 
-    <script src="script.js"></script>
+    <section id="contact" class="tab glass-card">
+      <!-- Contact content goes here -->
+    </section>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
