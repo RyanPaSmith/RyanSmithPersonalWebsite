@@ -9,9 +9,14 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <script src="https://unpkg.com/scrollreveal"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    emailjs.init("q-o0N3f1YmtQzyQy7"); // Replace with your actual EmailJS public key
+  </script>
 </head>
 <body>
   <div class="hero-bg" id="parallax-bg"></div>
+  <div class="overlay" id="bg-overlay"></div>
 
   <nav>
     <ul>
@@ -47,6 +52,11 @@
 
   <section id="contact" class="glass-card" data-aos="zoom-in">
     <h2>Contact Me</h2>
+    <div class="contact-info">
+      <p><strong>Email:</strong> <a href="mailto:ryanpasmith@gmail.com">ryanpasmith@gmail.com</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/smith-ryan-rit/" target="_blank">smith-ryan-rit</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+15853225707">585-322-5707</a></p>
+    </div>
     <form id="contact-form">
       <input type="text" name="firstName" placeholder="First Name" required />
       <input type="text" name="lastName" placeholder="Last Name" required />

@@ -1,6 +1,14 @@
 document.getElementById("contact-form").addEventListener("submit", function (e) {
   e.preventDefault();
-  alert("Message sending functionality coming soon!");
+
+  emailjs.sendForm("service_jwpaq1r", "template_wyiwqo6", this)
+    .then(() => {
+      alert("Message sent successfully!");
+      this.reset();
+    }, (error) => {
+      console.error("FAILED...", error);
+      alert("Something went wrong. Please try again.");
+    });
 });
 
 document.getElementById("theme-toggle").addEventListener("click", function () {
