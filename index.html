@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ryan Smith</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
   <div class="hero-bg"></div>
@@ -18,17 +20,17 @@
     </ul>
   </nav>
 
-  <section id="home" class="glass-card full-height center-content">
-    <h1>Ryan Smith</h1>
-    <p>I’m currently seeking roles in Business Analytics, Data Science, or Financial Technology. Let’s build something great together.</p>
+  <section id="home" class="glass-card full-height center-content" data-aos="fade-up">
+    <h1 class="glow-text">Ryan Smith</h1>
+    <p>I’m currently seeking roles in Business Analytics, Data Science, or FinTech. Let’s build something great together.</p>
   </section>
 
-  <section id="about" class="glass-card">
+  <section id="about" class="glass-card" data-aos="fade-right">
     <h2>About Me</h2>
-    <p>I’m a data-driven creator passionate about finance, technology, and visual storytelling. I love solving problems and bringing clarity through data, whether through dashboards, models, or elegant code.</p>
+    <p>I’m a data-driven creator passionate about finance, technology, and visual storytelling. I build solutions with dashboards, models, and code — and make sure they look good too.</p>
   </section>
 
-  <section id="projects" class="glass-card">
+  <section id="projects" class="glass-card" data-aos="fade-left">
     <h2>Projects</h2>
     <div class="projects-grid">
       <a href="project1.html"><img src="https://via.placeholder.com/300x200?text=Project+1" alt="Project 1"></a>
@@ -40,7 +42,7 @@
     </div>
   </section>
 
-  <section id="contact" class="glass-card">
+  <section id="contact" class="glass-card" data-aos="zoom-in">
     <h2>Contact Me</h2>
     <form id="contact-form">
       <input type="text" name="firstName" placeholder="First Name" required />
@@ -52,5 +54,8 @@
   </section>
 
   <script src="script.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
