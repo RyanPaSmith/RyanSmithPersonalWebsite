@@ -5,6 +5,8 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
 
 document.getElementById("theme-toggle").addEventListener("click", function () {
   document.body.classList.toggle("light-mode");
+  document.getElementById("parallax-bg").classList.toggle("light-bg");
+  document.getElementById("bg-overlay").classList.toggle("light-overlay");
 });
 
 document.addEventListener("mousemove", (e) => {
