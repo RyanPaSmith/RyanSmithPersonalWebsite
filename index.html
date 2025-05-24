@@ -7,9 +7,11 @@
   <link rel="stylesheet" href="style.css" />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="hero-bg"></div>
+  <div class="hero-bg" id="parallax-bg"></div>
 
   <nav>
     <ul>
@@ -17,6 +19,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><button id="theme-toggle">🌙</button></li>
     </ul>
   </nav>
 
@@ -54,6 +57,9 @@
   </section>
 
   <script src="script.js"></script>
-  <script>AOS.init();</script>
+  <script>
+    AOS.init();
+    ScrollReveal().reveal('.glass-card', { interval: 200 });
+  </script>
 </body>
 </html>
