@@ -1,4 +1,3 @@
-<!-- File: index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,43 +11,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
-    emailjs.init("q-o0N3f1YmtQzyQy7");
+    emailjs.init("q-o0N3f1YmtQzyQy7"); // Replace with your actual EmailJS public key
   </script>
-  <style>
-    .toast {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: rgba(0, 0, 0, 0.85);
-      color: #fff;
-      padding: 1em 1.5em;
-      border-radius: 8px;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      z-index: 1000;
-    }
-    .toast.show {
-      opacity: 1;
-    }
-    .contact-info a {
-      color: #00c6ff;
-      text-decoration: none;
-    }
-    .contact-info a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        gap: 1rem;
-      }
-    }
-  </style>
 </head>
 <body>
   <div class="hero-bg" id="parallax-bg"></div>
   <div class="overlay" id="bg-overlay"></div>
-  <div id="toast" class="toast"></div>
 
   <nav>
     <ul>
@@ -90,7 +58,18 @@
       <p><strong>Phone:</strong> <a href="tel:+15853225707">585-322-5707</a></p>
     </div>
     <form id="contact-form">
-      <input type="text" name="firstName" placeholder="First Name" required data-aos="fade-up" />
-      <input type="text" name="lastName" placeholder="Last Name" required data-aos="fade-up" data-aos-delay="100" />
-      <input type="email" name="email" placeholder="Email" required data-aos="fade-up" data-aos-delay="200" />
-      <textarea name="message" rows="5" placeholder="Your message..." required data-aos="
+      <input type="text" name="firstName" placeholder="First Name" required />
+      <input type="text" name="lastName" placeholder="Last Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
+  <script>
+    AOS.init();
+    ScrollReveal().reveal('.glass-card', { interval: 200 });
+  </script>
+</body>
+</html>
