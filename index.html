@@ -11,12 +11,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
-    emailjs.init("q-o0N3f1YmtQzyQy7"); // Replace with your actual EmailJS public key
+    emailjs.init("q-o0N3f1YmtQzyQy7");
   </script>
 </head>
 <body>
   <div class="hero-bg" id="parallax-bg"></div>
   <div class="overlay" id="bg-overlay"></div>
+  <div id="toast" class="toast"></div>
 
   <nav>
     <ul>
@@ -53,23 +54,63 @@
   <section id="contact" class="glass-card" data-aos="zoom-in">
     <h2>Contact Me</h2>
     <div class="contact-info">
-      <p><strong>Email:</strong> <a href="mailto:ryanpasmith@gmail.com">ryanpasmith@gmail.com</a></p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/smith-ryan-rit/" target="_blank">smith-ryan-rit</a></p>
-      <p><strong>Phone:</strong> <a href="tel:+15853225707">585-322-5707</a></p>
+      <p><strong>Email:</strong> <a class="contact-link" href="mailto:ryanpasmith@gmail.com">ryanpasmith@gmail.com</a></p>
+      <p><strong>LinkedIn:</strong> <a class="contact-link" href="https://www.linkedin.com/in/smith-ryan-rit/" target="_blank">smith-ryan-rit</a></p>
+      <p><strong>Phone:</strong> <a class="contact-link" href="tel:+15853225707">585-322-5707</a></p>
     </div>
     <form id="contact-form">
-      <input type="text" name="firstName" placeholder="First Name" required />
-      <input type="text" name="lastName" placeholder="Last Name" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
-      <button type="submit">Send</button>
+      <input type="text" name="firstName" placeholder="First Name" required data-aos="fade-up" />
+      <input type="text" name="lastName" placeholder="Last Name" required data-aos="fade-up" data-aos-delay="100" />
+      <input type="email" name="email" placeholder="Email" required data-aos="fade-up" data-aos-delay="200" />
+      <textarea name="message" rows="5" placeholder="Your message..." required data-aos="fade-up" data-aos-delay="300"></textarea>
+      <button type="submit" id="send-btn">Send</button>
     </form>
   </section>
 
-  <script src="script.js"></script>
   <script>
     AOS.init();
     ScrollReveal().reveal('.glass-card', { interval: 200 });
+
+    const btn = document.getElementById('send-btn');
+    const toast = document.getElementById('toast');
+
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.innerText = 'Sending...';
+
+      emailjs.sendForm("service_jwpaq1r", "template_wyiwqo6", this)
+        .then(() => {
+          toast.textContent = "Message sent successfully!";
+          toast.classList.add("show");
+          setTimeout(() => toast.classList.remove("show"), 3000);
+          btn.disabled = false;
+          btn.innerText = 'Send';
+          this.reset();
+        }, (error) => {
+          toast.textContent = "Error sending message. Try again later.";
+          toast.classList.add("show");
+          setTimeout(() => toast.classList.remove("show"), 3000);
+          btn.disabled = false;
+          btn.innerText = 'Send';
+        });
+    });
+
+    document.getElementById("theme-toggle").addEventListener("click", function () {
+      document.body.classList.toggle("light-mode");
+      document.getElementById("parallax-bg").classList.toggle("light-bg");
+      document.getElementById("bg-overlay").classList.toggle("light-overlay");
+      localStorage.setItem("theme", document.body.classList.contains("light-mode") ? "light" : "dark");
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.body.classList.add("light-mode");
+        document.getElementById("parallax-bg").classList.add("light-bg");
+        document.getElementById("bg-overlay").classList.add("light-overlay");
+      }
+    });
   </script>
 </body>
 </html>
