@@ -1,3 +1,22 @@
+.lottie-wrapper {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  width: 100px;
+  height: 100px;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lottie-wrapper lottie-player {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -227,7 +246,6 @@ button:hover {
   background: linear-gradient(to right, #0072ff, #00c6ff);
 }
 
-/* Contact link styling */
 .contact-link {
   color: #00e6ff;
   text-decoration: none;
@@ -244,7 +262,6 @@ body.light-mode .contact-link:hover {
   color: #339dff;
 }
 
-/* Toast notifications */
 .toast {
   position: fixed;
   bottom: 20px;
@@ -261,32 +278,9 @@ body.light-mode .contact-link:hover {
   opacity: 1;
 }
 
-/* Lottie player placement */
-lottie-player {
-  pointer-events: none;
-  user-select: none;
-}
-
-/* Responsive nav */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
     gap: 1rem;
   }
 }
-
-.lottie-wrapper {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1000;
-  width: 100px;
-  height: 100px;
-  pointer-events: none;
-}
-
-.lottie-wrapper lottie-player {
-  width: 100%;
-  height: 100%;
-}
-
