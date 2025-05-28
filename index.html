@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ryan Smith</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
@@ -45,19 +44,11 @@
       <a href="project1.html"><img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80" alt="Project 1"></a>
       <a href="project2.html"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80" alt="Project 2"></a>
       <a href="project3.html"><img src="https://images.unsplash.com/photo-1493244040629-496f6d136cc3?auto=format&fit=crop&w=800&q=80" alt="Project 3"></a>
-      <a href="project4.html"><img src="https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=800&q=80" alt="Project 4"></a>
-      <a href="project5.html"><img src="https://images.unsplash.com/photo-1508747703725-719777637510?auto=format&fit=crop&w=800&q=80" alt="Project 5"></a>
-      <a href="project6.html"><img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80" alt="Project 6"></a>
     </div>
   </section>
 
   <section id="contact" class="glass-card">
     <h2>Contact Me</h2>
-    <div class="contact-info">
-      <p><strong>Email:</strong> <a class="contact-link" href="mailto:ryanpasmith@gmail.com">ryanpasmith@gmail.com</a></p>
-      <p><strong>LinkedIn:</strong> <a class="contact-link" href="https://www.linkedin.com/in/smith-ryan-rit/" target="_blank">smith-ryan-rit</a></p>
-      <p><strong>Phone:</strong> <a class="contact-link" href="tel:+15853225707">585-322-5707</a></p>
-    </div>
     <form id="contact-form">
       <input type="text" name="firstName" placeholder="First Name" required />
       <input type="text" name="lastName" placeholder="Last Name" required />
@@ -68,48 +59,6 @@
   </section>
 
   <script>
-    const btn = document.getElementById('send-btn');
-    const toast = document.getElementById('toast');
-
-    document.getElementById("contact-form").addEventListener("submit", function (e) {
-      e.preventDefault();
-      btn.disabled = true;
-      btn.innerText = 'Sending...';
-
-      emailjs.sendForm("service_jwpaq1r", "template_wyiwqo6", this)
-        .then(() => {
-          toast.textContent = "Message sent successfully!";
-          toast.classList.add("show");
-          setTimeout(() => toast.classList.remove("show"), 3000);
-          btn.disabled = false;
-          btn.innerText = 'Send';
-          this.reset();
-        }, (error) => {
-          toast.textContent = "Error sending message. Try again later.";
-          toast.classList.add("show");
-          setTimeout(() => toast.classList.remove("show"), 3000);
-          btn.disabled = false;
-          btn.innerText = 'Send';
-        });
-    });
-
-    document.getElementById("theme-toggle").addEventListener("click", function () {
-      document.body.classList.toggle("light-mode");
-      document.getElementById("parallax-bg").classList.toggle("light-bg");
-      document.getElementById("bg-overlay").classList.toggle("light-overlay");
-      localStorage.setItem("theme", document.body.classList.contains("light-mode") ? "light" : "dark");
-    });
-
-    window.addEventListener("DOMContentLoaded", () => {
-      const savedTheme = localStorage.getItem("theme");
-      if (savedTheme === "light") {
-        document.body.classList.add("light-mode");
-        document.getElementById("parallax-bg").classList.add("light-bg");
-        document.getElementById("bg-overlay").classList.add("light-overlay");
-      }
-      resizeCanvas();
-    });
-
     const canvas = document.getElementById("codeRain");
     const ctx = canvas.getContext("2d");
 
@@ -122,9 +71,8 @@
       height = canvas.height = window.innerHeight;
       columns = Math.floor(width / fontSize);
       drops = Array(columns).fill(1);
+      console.log("Canvas resized:", width, height);
     }
-
-    resizeCanvas();
 
     function draw() {
       const isLight = document.body.classList.contains("light-mode");
@@ -145,8 +93,13 @@
       }
     }
 
+    document.addEventListener("DOMContentLoaded", () => {
+      resizeCanvas();
+      console.log("DOMContentLoaded: canvas initialized");
+      setInterval(draw, 33);
+    });
+
     window.addEventListener("resize", resizeCanvas);
-    setInterval(draw, 33);
   </script>
 </body>
 </html>
