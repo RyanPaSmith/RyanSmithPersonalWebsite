@@ -124,6 +124,8 @@
       drops = Array(columns).fill(1);
     }
 
+    resizeCanvas();
+
     function draw() {
       const isLight = document.body.classList.contains("light-mode");
       ctx.fillStyle = isLight ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.1)";
