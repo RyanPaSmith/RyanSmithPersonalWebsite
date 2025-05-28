@@ -1,3 +1,5 @@
+/* Lottie styles removed, everything else unchanged for functionality */
+
 * {
   margin: 0;
   padding: 0;
@@ -259,25 +261,6 @@ body.light-mode .contact-link:hover {
   opacity: 1;
 }
 
-/* 🔧 NEW: Constrain Lottie animation */
-.lottie-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  margin: 2rem auto;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.lottie-wrapper lottie-player {
-  width: 100%;
-  height: auto;
-  display: block;
-  max-height: 400px;
-  mix-blend-mode: lighten;
-}
-
-/* Responsive nav for mobile */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
