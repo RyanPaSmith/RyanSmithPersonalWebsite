@@ -13,6 +13,7 @@
   </script>
 </head>
 <body>
+  <canvas id="codeRain"></canvas>
   <div class="hero-bg" id="parallax-bg"></div>
   <div class="overlay" id="bg-overlay"></div>
   <div id="toast" class="toast"></div>
@@ -67,6 +68,7 @@
   </section>
 
   <script>
+    // Email sending
     const btn = document.getElementById('send-btn');
     const toast = document.getElementById('toast');
 
@@ -92,6 +94,7 @@
         });
     });
 
+    // Theme toggle
     document.getElementById("theme-toggle").addEventListener("click", function () {
       document.body.classList.toggle("light-mode");
       document.getElementById("parallax-bg").classList.toggle("light-bg");
@@ -106,6 +109,42 @@
         document.getElementById("parallax-bg").classList.add("light-bg");
         document.getElementById("bg-overlay").classList.add("light-overlay");
       }
+    });
+
+    // Code rain animation
+    const canvas = document.getElementById("codeRain");
+    const ctx = canvas.getContext("2d");
+
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    const letters = "DATAEXCELSQLR$MLAI0123456789";
+    const fontSize = 14;
+    const columns = Math.floor(width / fontSize);
+    const drops = Array(columns).fill(1);
+
+    function draw() {
+      const isLight = document.body.classList.contains("light-mode");
+      ctx.fillStyle = isLight ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.1)";
+      ctx.fillRect(0, 0, width, height);
+
+      ctx.fillStyle = isLight ? "#0072ff" : "#00e6ff";
+      ctx.font = fontSize + "px monospace";
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters.charAt(Math.floor(Math.random() * letters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+
+    setInterval(draw, 33);
+
+    window.addEventListener("resize", () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
     });
   </script>
 </body>
