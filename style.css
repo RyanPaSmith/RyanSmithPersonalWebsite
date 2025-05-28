@@ -1,3 +1,4 @@
+/* === Global Reset === */
 * {
   margin: 0;
   padding: 0;
@@ -50,6 +51,16 @@ body.light-mode .hero-bg {
 
 body.light-mode .overlay {
   background: #ffffff;
+}
+
+#codeRain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -3;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 nav {
@@ -144,7 +155,7 @@ body.light-mode .glow-text {
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.2); /* updated for better visibility */
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -221,13 +232,16 @@ button:hover {
   text-decoration: none;
   transition: color 0.3s ease;
 }
+
 .contact-link:hover {
   color: #66f0ff;
   text-decoration: underline;
 }
+
 body.light-mode .contact-link {
   color: #0072ff;
 }
+
 body.light-mode .contact-link:hover {
   color: #339dff;
 }
@@ -244,6 +258,7 @@ body.light-mode .contact-link:hover {
   transition: opacity 0.4s ease;
   z-index: 1000;
 }
+
 .toast.show {
   opacity: 1;
 }
@@ -271,13 +286,4 @@ body.light-mode .contact-link:hover {
     width: 240px;
     height: 240px;
   }
-}
-#codeRain {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -3;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
 }
