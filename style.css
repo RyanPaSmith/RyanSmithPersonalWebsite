@@ -287,3 +287,16 @@ body.light-mode .contact-link:hover {
     height: 240px;
   }
 }
+.project-category {
+  margin-bottom: 3rem;
+}
+
+.category-header {
+  width: 220px;
+  height: auto;
+  margin-bottom: 1rem;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
