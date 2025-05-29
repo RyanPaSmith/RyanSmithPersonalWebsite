@@ -6,6 +6,29 @@
   <title>GHR Revenue Strategy</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    .click-hint {
+      position: absolute;
+      right: 10%;
+      top: 35%;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.5rem 1rem;
+      border-radius: 12px;
+      color: #00e6ff;
+      font-weight: bold;
+      animation: bounce 2s infinite;
+      z-index: 10;
+    }
+    .click-hint::after {
+      content: '⬅';
+      font-size: 1.5rem;
+      display: block;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+  </style>
 </head>
 <body>
   <div class="hero-bg" id="parallax-bg"></div>
@@ -28,7 +51,10 @@
     <p>The goal: Deliver insights through Tableau visualizations and business analytics to help the executive team integrate these properties into their portfolio more effectively.</p>
 
     <h2>📊 Data</h2>
-    <img src="images/data.png" alt="Data Overview" style="width:100%; border-radius:8px; margin: 1rem 0;">
+    <div class="click-hint">Click Me</div>
+    <a href="https://docs.google.com/spreadsheets/d/1RU23Tov_vA4iBQ8ufaK8iDhOm9Y8mD6AH9Pb0XJ5tas/edit?usp=sharing" target="_blank">
+      <img src="images/data.png" alt="Data Overview" style="width:100%; border-radius:8px; margin: 1rem 0;">
+    </a>
     <ul>
       <li><strong>hotel.csv</strong> – guest bookings at the city hotel</li>
       <li><strong>resort.csv</strong> – guest bookings at the resort property</li>
