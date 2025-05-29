@@ -300,3 +300,15 @@ body.light-mode .contact-link:hover {
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
 }
 
+.two-column {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-label {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: inherit;
+}
