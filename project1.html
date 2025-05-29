@@ -10,7 +10,6 @@
     .click-hint {
       position: absolute;
       right: 10%;
-      top: 35%;
       background: rgba(255, 255, 255, 0.1);
       padding: 0.5rem 1rem;
       border-radius: 12px;
@@ -23,6 +22,12 @@
       content: '⬅';
       font-size: 1.5rem;
       display: block;
+    }
+    .hint-data {
+      top: 35%;
+    }
+    .hint-presentation {
+      top: 75%;
     }
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
@@ -51,7 +56,7 @@
     <p>The goal: Deliver insights through Tableau visualizations and business analytics to help the executive team integrate these properties into their portfolio more effectively.</p>
 
     <h2>📊 Data</h2>
-    <div class="click-hint">Click Me</div>
+    <div class="click-hint hint-data">Click Me</div>
     <a href="https://docs.google.com/spreadsheets/d/1RU23Tov_vA4iBQ8ufaK8iDhOm9Y8mD6AH9Pb0XJ5tas/edit?usp=sharing" target="_blank">
       <img src="images/data.png" alt="Data Overview" style="width:100%; border-radius:8px; margin: 1rem 0;">
     </a>
@@ -62,6 +67,7 @@
     <p>Each dataset includes features such as stay durations, lead time, customer demographics, and booking behaviors.</p>
 
     <h2>📽️ Capstone Presentation</h2>
+    <div class="click-hint hint-presentation">Click Me</div>
     <a href="https://docs.google.com/presentation/d/1AOxBTg8-jxAvyioICv-CNo_I7AuPehOa/edit?usp=sharing&ouid=118226276583188749172&rtpof=true&sd=true" target="_blank">
       <img src="images/capstone_slide.png" alt="Capstone Presentation" style="width:100%; max-width:800px; margin: 1rem auto; display:block; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.3);">
     </a>
