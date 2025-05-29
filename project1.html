@@ -1,26 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project 1</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #121212;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    h1 {
-      font-size: 3rem;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GHR Revenue Strategy</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Project 1</h1>
+  <div class="hero-bg" id="parallax-bg"></div>
+  <div class="overlay" id="bg-overlay"></div>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="project1.html" class="active">Project 1</a></li>
+      <li><a href="project2.html">Project 2</a></li>
+      <!-- Add others as needed -->
+    </ul>
+  </nav>
+
+  <section class="glass-card">
+    <h1>🏨 Project: Global Hotels and Resorts Revenue Strategy</h1>
+
+    <h2>📌 Scenario</h2>
+    <img src="images/scenario.png" alt="GHR Scenario" style="width:100%; border-radius:8px; margin: 1rem 0;">
+    <p>Global Hotels and Resorts (GHR) acquired two properties — one city hotel and one resort — and needed data-driven insights to understand booking patterns, customer segmentation, and strategies for maximizing revenue post-acquisition.</p>
+    <p>The goal: Deliver insights through Tableau visualizations and business analytics to help the executive team integrate these properties into their portfolio more effectively.</p>
+
+    <h2>📊 Data</h2>
+    <img src="images/data.png" alt="Data Overview" style="width:100%; border-radius:8px; margin: 1rem 0;">
+    <ul>
+      <li><strong>hotel.csv</strong> – guest bookings at the city hotel</li>
+      <li><strong>resort.csv</strong> – guest bookings at the resort property</li>
+    </ul>
+    <p>Each dataset includes features such as stay durations, lead time, customer demographics, and booking behaviors.</p>
+
+    <h2>🧠 Summary & Outcomes</h2>
+    <p>For this challenge, we developed a Tableau dashboard and performed analysis to:</p>
+    <ul>
+      <li>Understand guest behavior trends (stay patterns, repeat visits, room upgrades)</li>
+      <li>Segment customers by booking channel, deposit type, and lead time</li>
+      <li>Identify high-revenue segments and pricing opportunities</li>
+      <li>Recommend tailored strategies for each hotel type:</li>
+        <ul>
+          <li><strong>City Hotel:</strong> Optimize short-stay business bookings</li>
+          <li><strong>Resort:</strong> Focus on long-stay leisure travelers and upselling</li>
+        </ul>
+    </ul>
+    <p>This project demonstrated our ability to transform operational data into executive-level recommendations using storytelling and visual insights.</p>
+  </section>
 </body>
 </html>
