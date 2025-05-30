@@ -127,5 +127,23 @@
 
     window.addEventListener("resize", resizeCanvas);
   </script>
+
+  <!-- Light/Dark Mode Toggle Logic -->
+  <script>
+    const themeToggle = document.getElementById("theme-toggle");
+
+    // Load stored preference
+    if (localStorage.getItem("theme") === "light") {
+      document.body.classList.add("light-mode");
+      themeToggle.textContent = "🌞";
+    }
+
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("light-mode");
+      const isLight = document.body.classList.contains("light-mode");
+      themeToggle.textContent = isLight ? "🌞" : "🌙";
+      localStorage.setItem("theme", isLight ? "light" : "dark");
+    });
+  </script>
 </body>
 </html>
